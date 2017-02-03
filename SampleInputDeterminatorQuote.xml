@@ -1,0 +1,83 @@
+<LifeLink xmlns="urn:lifelink-schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:lifelink-schema llXML.xsd">
+	<LL>
+		<UserName>YourUserName</UserName>
+		<UserPassword>YourUserPassword</UserPassword>
+		<InterfaceType>NoGUI</InterfaceType>
+		<OutputType>XML</OutputType>
+		<Logout>false</Logout>
+		<Tool>
+			<Name>VitalTerm_Net</Name>
+		</Tool>
+	</LL>
+	<UserInformation>
+		<FirstName>UserName</FirstName>
+		<LastName>UserLastName</LastName>
+	</UserInformation>
+	<Client>
+		<Applicant>
+			<FirstName>ClientFirstName</FirstName>
+			<LastName>ClientLastName</LastName>
+			<Age>45</Age>
+			<Sex>Male</Sex>
+		</Applicant>
+		<StateOfIssue>CA</StateOfIssue>
+	</Client>
+	<VitalTermNet>
+		<UWClassDetermination>
+			<!--Requesting a class be generated from the Class Determiantion System-->
+			<DeterminatorAnswerXML>
+				<!--Three questions aswered here:  Height/Weight, Blood Pressure and Cholestrol Level-->
+				<Question QuesType="HEIGHTWEIGHT" QuesId="1">
+					<Answers>
+						<Control id="1" ControlValueType="ABSOLUTE" Answer="70"/>
+						<!--Height of client in Inches-->
+						<Control id="2" ControlValueType="RANGE" Answer="200"/>
+						<!--Weight of client-->
+					</Answers>
+				</Question>
+				<Question QuesType="BLOOD_PRESSURE" QuesId="3">
+					<Answers>
+						<Control id="7" ControlValueType="RANGE" Answer="139"/>
+						<!--clients Systolic blood pressure-->
+						<Control id="73" ControlValueType="RANGE" Answer="75"/>
+						<!--clients Dystolci blood pressure-->
+						<Control id="8" ControlValueType="MAXIMUM" Answer="0"/>
+						<!-- client takes medication or not-->
+					</Answers>
+				</Question>
+				<Question QuesType="GENERIC" QuesId="4">
+					<Answers>
+						<Control id="9" ControlValueType="RANGE" Answer="178"/>
+						<!--clients cholesterol level-->
+						<Control id="11" ControlValueType="MAXIMUM" Answer="0"/>
+						<!--client tales medication or not-->
+					</Answers>
+				</Question>
+			</DeterminatorAnswerXML>
+		</UWClassDetermination>
+		<Products>
+			<ProductOptions>
+				<BreakDownPremiums>0</BreakDownPremiums>
+				<CalcToPenny>1</CalcToPenny>
+				<DisplayProductClasses>0</DisplayProductClasses>
+				<GetCompanyInfo>1</GetCompanyInfo>
+				<ShowCurrentRates>0</ShowCurrentRates>
+				<ShowRemovedProducts>1</ShowRemovedProducts>
+				<ShowProdInfoOnRemoval>1</ShowProdInfoOnRemoval>
+				<ShowProdInfoOnly>0</ShowProdInfoOnly>
+				<ShowPremiumsOnly>0</ShowPremiumsOnly>
+				<Calc1stYearModal>1</Calc1stYearModal>
+			</ProductOptions>
+			<ProductLists>
+				<YearsLevel>20</YearsLevel>
+			</ProductLists>
+			<ProductScenarios>
+				<Scenario>
+					<FaceAmount>500000</FaceAmount>
+					<PaymentMode>0</PaymentMode>
+					<!--Not specifing a class here.  Taken care of by class determination request.-->
+				</Scenario>
+			</ProductScenarios>
+		</Products>
+	</VitalTermNet>
+</LifeLink>
